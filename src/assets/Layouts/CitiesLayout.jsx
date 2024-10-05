@@ -1,15 +1,13 @@
 import React from 'react'
 import { Outlet } from "react-router-dom";
-import SideBar from "../Components/SideBar";
 
-export default function StandarLayout() {
+export default function CitiesLayout() {
     return (
-        <> 
-            <header className='flex-none'>
-                <h1 className='bg-gray-900 text-white text-center'>Header</h1>
-                <SideBar></SideBar>
+        <>
+            <header>
+                <h1>Header</h1>
             </header>
-            <main className='flex grow h-full'>
+            <main>
                 <Outlet></Outlet>
             </main>
             <footer className='flex-none'>
@@ -18,4 +16,3 @@ export default function StandarLayout() {
         </>
     )
 }
- 
