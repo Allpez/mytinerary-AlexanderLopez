@@ -1,0 +1,29 @@
+.imagenes-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imagenes-seccion img {
+    width: 200px; /* Ajusta el tamaño según tu diseño */
+    height: auto;
+    margin: 0 10px;
+  }
+  
+  .paginacion {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .paginacion span {
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+  }
+  
+  .paginacion .active {
+    background-color: #000;
+    color: #fff;
+  }
+  
