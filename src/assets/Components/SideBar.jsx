@@ -1,29 +1,49 @@
-import React from 'react'
+import React, { useState } from "react";
+import "../styles/SideBar.css";
 import { NavLink } from "react-router-dom";
+import logo from "../images/LogoMyTinerary.png";
+import { FaUser } from "react-icons/fa";
+
 
 const routes = [
-    {to: "/", text: "Home"},
-    {to: "/cities", text: "Cities"},
-    {to: "/user", text: "User"},
+  { to: "/", text: "Home" },
+  { to: "/cities", text: "Cities" },
+  { to: "/user", text:<><FaUser />Login</>},
 ]
 
 function SideBar() {
 
-    const activeClass = "text-red-600 font-bold"
-    const inactiveClass = "text-blue-600"
+  const activeClass = "text-white font-extrabold"
+  const inactiveClass = "text-blue-600"
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-     
-    <nav className="bg-green-300">
-    <ul className="flex gap-4">
-      {routes.map((r,index) => (
-        <li key={index}>
-          <NavLink to={r.to} className={({isActive})=> isActive ? activeClass : inactiveClass}>{r.text}</NavLink>
-        </li>
-      ))}
-    </ul>
-  </nav>
-  )
-}
+    <>
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        ☰
+      </button>
 
-export default SideBar
+      <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
+        <div className="sidebar-logo">
+        <img src={logo} className='w-20 mt-2' alt="Logo-My-Itinerary" />
+        </div>
+        <nav className="w-full">
+          <ul className="sidebar-menu w-auto">
+            {routes.map((r, index) => (
+              <li key={index}>
+                <NavLink to={r.to} className={({ isActive }) => isActive ? activeClass : inactiveClass}>{r.text}</NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </>
+  );
+};
+
+export default SideBar;

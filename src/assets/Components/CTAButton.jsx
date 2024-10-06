@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/BlinkingCTA.css';
 
-const BlinkingCTA = () => {
+function BlinkingCTA() {
     return (
         <div className="container">
             <a href="#" className='CTAButton flex flex-col' style={{ '--clr': '#00ccff', '--i': 1 }}>

@@ -43,7 +43,7 @@
     height: 600%;
     background: var(--clr);
     transition: 1s;
-    animation: animate 2s linear infinite;
+    animation: animate 4s linear infinite;
     animation-delay: calc(0.33s * var(--i));
     
 }
@@ -88,5 +88,5 @@
 
 .CTAButton:hover span {
     opacity: 1;
-    color: #0e1538;
+    color: #ffffff;
 }

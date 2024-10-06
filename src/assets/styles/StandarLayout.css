@@ -1,6 +1,15 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 800;
 }
 
+.header {
+    background: #0e1538;
+    
+}
 
+.text-banner {
+    text-shadow: -1px 1px 0 #000000, 1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+}

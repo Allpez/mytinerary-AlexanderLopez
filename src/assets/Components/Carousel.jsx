@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import "../styles/carousel.css"
 
+//importado de imagenes
+import imagen1 from '../images/OZ78aa.veligandu-island-beach-of-the-maldives-795x360.jpg';
+
 const Carrusel = () => {
   const [activeSection, setActiveSection] = useState(0);
 
@@ -12,7 +15,7 @@ const Carrusel = () => {
       { img: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmdw6hv6TnhERLDe8DJCfQY2vQt1G9fR8kQt91bUNnihxp/image.png', url: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmdw6hv6TnhERLDe8DJCfQY2vQt1G9fR8kQt91bUNnihxp/image.png' },
     ],
     [
-      { img: 'link-imagen-5', url: 'https://link.com/5' },
+      { img: imagen1, url: 'https://link.com/5' },
       { img: 'link-imagen-6', url: 'https://link.com/6' },
       { img: 'link-imagen-7', url: 'https://link.com/7' },
       { img: 'link-imagen-8', url: 'https://link.com/8' },
