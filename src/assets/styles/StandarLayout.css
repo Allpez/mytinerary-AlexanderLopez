@@ -5,9 +5,8 @@
     font-weight: 800;
 }
 
-.header {
+.header, .footer {
     background: #0e1538;
-    
 }
 
 .text-banner {

@@ -8,9 +8,9 @@ export default function Home() {
         <>
             <div className='flex flex-col justify-center items-center'>
                 <h1 className='text-white text-banner text-5xl '>My Tinerary</h1>
-                <p className='text-white text-banner text-2xl'>“Every trip a new story, every destination a new adventure.”</p>
+                <p className='text-white text-banner text-2xl'>“Find your perfect trip, designed by insiders who know and love their cities!”</p>
                 <BlinkingCTA></BlinkingCTA>
-                
+
                 <Carousel></Carousel>
             </div>
         </>

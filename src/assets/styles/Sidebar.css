@@ -3,10 +3,9 @@
   position: fixed;
   top: 25%;
   right: 0; 
-  height: 35%;
+  height: 50%;
   width: 200px;
   background: #0e1538;
-
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra ajustada hacia la izquierda */
   transform: translateX(100%); /* Oculto inicialmente (fuera de la pantalla a la derecha) */
   transition: transform 0.3s ease; /* Transición suave */
