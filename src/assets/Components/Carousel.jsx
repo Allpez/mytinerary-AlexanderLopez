@@ -1,68 +1,92 @@
-import React, { useState } from 'react';
-import "../styles/carousel.css"
+import React, { useState, useEffect } from "react";
+import "../styles/carousel.css";
 
-//importado de imagenes
-import imagen1 from '../images/OZ78aa.veligandu-island-beach-of-the-maldives-795x360.jpg';
+const Carousel = ({ pictures, intervalo = 3000 }) => {
+  const [indiceActual, setIndiceActual] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-const Carrusel = () => {
-  const [activeSection, setActiveSection] = useState(0);
+  // Verificar el tamaño de la ventana para ajustar la cantidad de imágenes mostradas
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-  const sections = [
-    [
-      { img: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmP4sCCp7ywt7AKXqy1dis71bgyAz5NerDtvvXFkiCE6iG/image.png', url: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmP4sCCp7ywt7AKXqy1dis71bgyAz5NerDtvvXFkiCE6iG/image.png' },
-      { img: 'https://steemitimages.com/DQmUT9w3BdmsrcGz6htdepaFUoPVDs67qK6sVUqoxhNV3Li/image.png', url: 'https://steemitimages.com/DQmUT9w3BdmsrcGz6htdepaFUoPVDs67qK6sVUqoxhNV3Li/image.png' },
-      { img: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmdQFUwpsA4eLyvdmfohEEVgGadefNaLxXKvFQDD9cA9Je/image.png', url: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmdQFUwpsA4eLyvdmfohEEVgGadefNaLxXKvFQDD9cA9Je/image.png' },
-      { img: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmdw6hv6TnhERLDe8DJCfQY2vQt1G9fR8kQt91bUNnihxp/image.png', url: 'https://steemitimages.com/640x0/https://steemitimages.com/DQmdw6hv6TnhERLDe8DJCfQY2vQt1G9fR8kQt91bUNnihxp/image.png' },
-    ],
-    [
-      { img: imagen1, url: 'https://link.com/5' },
-      { img: 'link-imagen-6', url: 'https://link.com/6' },
-      { img: 'link-imagen-7', url: 'https://link.com/7' },
-      { img: 'link-imagen-8', url: 'https://link.com/8' },
-    ],
-    [
-      { img: 'link-imagen-9', url: 'https://link.com/9' },
-      { img: 'link-imagen-10', url: 'https://link.com/10' },
-      { img: 'link-imagen-11', url: 'https://link.com/11' },
-      { img: 'link-imagen-12', url: 'https://link.com/12' },
-    ],
-  ];
+  const itemsPorPagina = isMobile ? 1 : 4; // Solo una imagen si es vista móvil
 
-  const nextSection = () => {
-    setActiveSection((prev) => (prev === sections.length - 1 ? 0 : prev + 1));
+  const avanzar = () => {
+    setIndiceActual((prevIndice) =>
+      prevIndice + itemsPorPagina >= pictures.length ? 0 : prevIndice + itemsPorPagina
+    );
   };
 
-  const prevSection = () => {
-    setActiveSection((prev) => (prev === 0 ? sections.length - 1 : prev - 1));
+  const retroceder = () => {
+    setIndiceActual((prevIndice) =>
+      prevIndice === 0 ? pictures.length - itemsPorPagina : prevIndice - itemsPorPagina
+    );
   };
+
+  useEffect(() => {
+    const intervaloID = setInterval(avanzar, intervalo);
+    return () => clearInterval(intervaloID);
+  }, [indiceActual, intervalo]);
+
+  const picturesEnPantalla = pictures.slice(indiceActual, indiceActual + itemsPorPagina);
+  const picturesRellenadas = [...picturesEnPantalla];
+  while (picturesRellenadas.length < itemsPorPagina) {
+    picturesRellenadas.push(null);
+  }
+
+  const indicadores = Math.ceil(pictures.length / itemsPorPagina);
 
   return (
-    <div className="carrusel-container m-20">
-      <button onClick={prevSection}>Anterior</button>
+    <div className="carrusel flex flex-col items-center justify-center">
+      <div className="flex items-center justify-center space-x-4">
+        <button onClick={retroceder} className="my-btn-carousel p-2 rounded-md hover:bg-gray-400 hover:text-black">
+          ◀
+        </button>
 
-      <div className="imagenes-seccion">
-        {sections[activeSection].map((item, index) => (
-          <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
-            <img src={item.img} alt={`Imagen ${index + 1}`} />
-          </a>
-        ))}
+        <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2 grid-rows-2"} gap-4 w-6/12 h-6/12`}>
+          {picturesRellenadas.map((picture, index) => (
+            <div key={index} className="relative picture-carrusel">
+              {picture ? (
+                <>
+                  <img
+                    src={picture.picture}
+                    alt={picture.title}
+                    className="rounded-lg shadow-md w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-2 text-center">
+                    {picture.title}
+                  </div>
+                </>
+              ) : (
+                <div className="w-full h-full bg-transparent"></div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <button onClick={avanzar} className="my-btn-carousel p-2 rounded-md hover:bg-gray-400 hover:text-black">
+          ▶
+        </button>
       </div>
 
-      <button onClick={nextSection}>Siguiente</button>
-
-      <div className="paginacion">
-        {sections.map((_, index) => (
-          <span
-            key={index}
-            className={index === activeSection ? 'active' : ''}
-            onClick={() => setActiveSection(index)}
-          >
-            {index + 1}
-          </span>
+      {/* Indicadores de página */}
+      <div className="flex justify-center mt-4 space-x-2">
+        {Array.from({ length: indicadores }).map((_, idx) => (
+          <div
+            key={idx}
+            className={`w-3 h-3 rounded-full ${indiceActual / itemsPorPagina === idx ? "bg-gray-800" : "bg-gray-400"}`}
+          ></div>
         ))}
       </div>
     </div>
   );
 };
 
-export default Carrusel;
+export default Carousel;

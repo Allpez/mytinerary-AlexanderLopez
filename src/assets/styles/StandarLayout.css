@@ -5,7 +5,16 @@
     font-weight: 800;
 }
 
-.header, .footer {
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(14, 21, 56);
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.footer {
     background: #0e1538;
 }
 
@@ -15,47 +24,49 @@
 
 .fullScreenImage {
     background-position: center;
-    background-attachment: fixed; /* Mantiene la imagen fija */
-    background-size: cover; /* Ajusta la imagen para que cubra el 100% del contenedor */
-    height: 100vh; /* Establece la altura para que ocupe el 100% de la vista */
-    overflow: hidden; /* Evita que el contenido sobresalga */
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
     animation: zoomMoveBackground 30s ease-in-out infinite;
 }
 
 main {
-    min-height: calc(100vh - 140px); /* Ajusta el contenido principal para que reste la altura del header y footer */
+    min-height: calc(100vh - 140px);
 }
 
 /* Ajustes para dispositivos móviles */
 @media (max-width: 768px) {
     .fullScreenImage {
-        animation: none; /* Desactiva la animación en móviles */
+        animation: none; 
     }
-}/* Animación solo en el fondo */
+}
+
+/* Animación solo en el fondo */
 @keyframes zoomMoveBackground {
     0% {
-        background-size: 110%; /* Tamaño inicial del fondo */
-        background-position: center; /* Posición inicial centrada */
+        background-size: 110%;
+        background-position: center; 
     }
     20% {
-        background-size: 120%; /* Aplica un poco más de zoom */
-        background-position: top left; /* Mueve el fondo hacia la esquina superior izquierda */
+        background-size: 120%; 
+        background-position: top left; 
     }
     40% {
-        background-size: 120%; /* Mantén el zoom */
-        background-position: top right; /* Mueve el fondo hacia la esquina superior derecha */
+        background-size: 120%; 
+        background-position: top right; 
     }
     60% {
-        background-size: 120%; /* Mantén el zoom */
-        background-position: bottom right; /* Mueve el fondo hacia la esquina inferior derecha */
+        background-size: 120%;
+        background-position: bottom right; 
     }
     80% {
-        background-size: 120%; /* Mantén el zoom */
-        background-position: bottom left; /* Mueve el fondo hacia la esquina inferior izquierda */
+        background-size: 120%; 
+        background-position: bottom left;
     }
     100% {
-        background-size: 110%; /* Mantén el zoom */
-        background-position: center; /* Mueve el fondo hacia la esquina inferior izquierda */
+        background-size: 110%; 
+        background-position: center;
     }
 
 }

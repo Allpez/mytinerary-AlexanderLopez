@@ -1,12 +1,15 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom"; //Importamos dos funciones de Router-DOM
-import Home from "./assets/Pages/Home"; //Ser importan las rutas
+
+//Se importan las rutas
+import Home from "./assets/Pages/Home";
 import Cities from "./assets/Pages/Cities";
 import User from "./assets/Pages/User";
 import NotFound from "./assets/Pages/NotFound";
+
+//Se importan los layouts
 import StandarLayout from "./assets/Layouts/StandarLayout";
 import CitiesLayout from "./assets/Layouts/CitiesLayout";
-
 
 const router = createBrowserRouter([ //Lista de objetos con la ruta y el componente a renderizar
   { element: <StandarLayout></StandarLayout>, //usando el esqueleto (plantilla) para los componentes a renderizar
@@ -25,7 +28,6 @@ const router = createBrowserRouter([ //Lista de objetos con la ruta y el compone
 ]);
 
 function App() {
-
   return (
     <> 
       <RouterProvider router={router}></RouterProvider>
