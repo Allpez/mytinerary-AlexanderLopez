@@ -37,7 +37,7 @@ const Carrusel = () => {
   };
 
   return (
-    <div className="carrusel-container">
+    <div className="carrusel-container m-20">
       <button onClick={prevSection}>Anterior</button>
 
       <div className="imagenes-seccion">

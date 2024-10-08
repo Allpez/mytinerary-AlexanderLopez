@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "../styles/SideBar.css";
 import { NavLink } from "react-router-dom";
-import logo from "../images/LogoMyTinerary.png";
+// import logo from "../images/LogoMyTinerary.png";
+//React Icons
 import { FaUser } from "react-icons/fa";
-
+import { FaCity } from "react-icons/fa";
+import { IoHome } from "react-icons/io5";
 
 const routes = [
-  { to: "/", text: "Home" },
-  { to: "/cities", text: "Cities" },
-  { to: "/user", text:<><FaUser />Login</>},
+  { to: "/", text: <><IoHome />Home</> },
+  { to: "/cities", text: <><FaCity />Cities</> },
+  { to: "/user", text: <><FaUser />Login</> },
 ]
 
 function SideBar() {
@@ -29,9 +31,9 @@ function SideBar() {
       </button>
 
       <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-logo">
+        {/* <div className="sidebar-logo">
         <img src={logo} className='w-20 mt-2' alt="Logo-My-Itinerary" />
-        </div>
+        </div> */}
         <nav className="w-full">
           <ul className="sidebar-menu w-auto">
             {routes.map((r, index) => (

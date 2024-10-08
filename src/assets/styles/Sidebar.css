@@ -3,8 +3,8 @@
   position: fixed;
   top: 25%;
   right: 0; 
-  height: 50%;
-  width: 200px;
+  height: auto;
+  width: 150px;
   background: #0e1538;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra ajustada hacia la izquierda */
   transform: translateX(100%); /* Oculto inicialmente (fuera de la pantalla a la derecha) */
@@ -14,7 +14,7 @@
   border: 1px solid rgb(2, 101, 248);
   border-radius: 15px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 

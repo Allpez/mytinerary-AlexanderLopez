@@ -12,3 +12,50 @@
 .text-banner {
     text-shadow: -1px 1px 0 #000000, 1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
 }
+
+.fullScreenImage {
+    background-position: center;
+    background-attachment: fixed; /* Mantiene la imagen fija */
+    background-size: cover; /* Ajusta la imagen para que cubra el 100% del contenedor */
+    height: 100vh; /* Establece la altura para que ocupe el 100% de la vista */
+    overflow: hidden; /* Evita que el contenido sobresalga */
+    animation: zoomMoveBackground 30s ease-in-out infinite;
+}
+
+main {
+    min-height: calc(100vh - 140px); /* Ajusta el contenido principal para que reste la altura del header y footer */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .fullScreenImage {
+        animation: none; /* Desactiva la animación en móviles */
+    }
+}/* Animación solo en el fondo */
+@keyframes zoomMoveBackground {
+    0% {
+        background-size: 110%; /* Tamaño inicial del fondo */
+        background-position: center; /* Posición inicial centrada */
+    }
+    20% {
+        background-size: 120%; /* Aplica un poco más de zoom */
+        background-position: top left; /* Mueve el fondo hacia la esquina superior izquierda */
+    }
+    40% {
+        background-size: 120%; /* Mantén el zoom */
+        background-position: top right; /* Mueve el fondo hacia la esquina superior derecha */
+    }
+    60% {
+        background-size: 120%; /* Mantén el zoom */
+        background-position: bottom right; /* Mueve el fondo hacia la esquina inferior derecha */
+    }
+    80% {
+        background-size: 120%; /* Mantén el zoom */
+        background-position: bottom left; /* Mueve el fondo hacia la esquina inferior izquierda */
+    }
+    100% {
+        background-size: 110%; /* Mantén el zoom */
+        background-position: center; /* Mueve el fondo hacia la esquina inferior izquierda */
+    }
+
+}
