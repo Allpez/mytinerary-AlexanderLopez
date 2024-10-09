@@ -16,7 +16,7 @@ const inactiveClass = "my-2";
 
 function Footer() {
     return (
-        <footer className='footer text-base flex flex-col sm:flex-row md:flex-row justify-between gap-15 text-white text-center w-full h-auto items-center sm:items-baseline pb-6 px-20' >
+        <footer className='footer text-base flex flex-col sm:flex-row md:flex-row justify-between gap-15 text-white text-center w-full  items-center sm:items-baseline pb-6 px-20 ' >
             <nav>
                 <ul className="w-auto flex flex-col items-start">
                     {routes.map((r, index) => (

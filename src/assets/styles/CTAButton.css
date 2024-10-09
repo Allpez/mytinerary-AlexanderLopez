@@ -9,10 +9,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: wrap; /* Ajuste al tamaño del contenido */
-    height: 20vh; /* Ajuste al tamaño del contenido */
+    width: wrap; 
+    height: 20vh; 
     background: rgba#fdfdff;
-    padding: 20px; /* Puedes ajustar el padding según sea necesario */
+    padding: 20px; 
 }
 
 .CTAButton {
@@ -49,7 +49,6 @@
 
 .CTAButton:hover::before {
     width: 120%;
-    
 }
 
 @keyframes animate {
@@ -82,7 +81,6 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     transition: 0.5s;
-    
 }
 
 .CTAButton:hover span {

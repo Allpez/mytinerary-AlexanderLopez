@@ -1,14 +1,15 @@
 import React from 'react'
-import Footer from "../Components/Footer"
 import { Outlet } from "react-router-dom";
+import "../styles/Cities.css"
 
-export default function CitiesLayout() {
+function CitiesLayout() {
     return (
         <>
-            <main className='h-auto'>
+            <main>
                 <Outlet />
             </main>
-            <Footer />
         </>
     )
 }
+
+export default CitiesLayout

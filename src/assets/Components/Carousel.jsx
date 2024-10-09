@@ -5,7 +5,6 @@ const Carousel = ({ pictures, intervalo = 3000 }) => {
   const [indiceActual, setIndiceActual] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Verificar el tamaño de la ventana para ajustar la cantidad de imágenes mostradas
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -16,7 +15,7 @@ const Carousel = ({ pictures, intervalo = 3000 }) => {
     };
   }, []);
 
-  const itemsPorPagina = isMobile ? 1 : 4; // Solo una imagen si es vista móvil
+  const itemsPorPagina = isMobile ? 1 : 4; 
 
   const avanzar = () => {
     setIndiceActual((prevIndice) =>

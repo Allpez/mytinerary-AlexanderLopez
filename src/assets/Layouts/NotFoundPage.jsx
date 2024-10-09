@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import error404 from "../images/page-not-found.jpg";
-import Footer from "../Components/Footer"
 import "../styles/NotFoundPage.css"
 
 
@@ -25,7 +24,6 @@ function NotFoundPage() {
                     </button>
                 </main>
             </div>
-            {/* <Footer /> */}
         </>
     )
 }

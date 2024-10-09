@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/*", // Ruta "catch-all" para manejar 404
+    path: "/*", 
     element: <NotFoundPage />,
   },
 ]);

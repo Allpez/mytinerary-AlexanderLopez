@@ -17,7 +17,7 @@ function Header() {
             if (scrollTop > 50) {
                 setIsScrolled(true);
             } else {
-                setIsScrolled(false);
+                setIsScrolled(false);  
             }
         };
 

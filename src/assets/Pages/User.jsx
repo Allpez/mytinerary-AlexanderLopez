@@ -13,8 +13,6 @@ function User() {
         <>
             <div>User</div>
             <p>this is User Login page</p>
-
-            <h1>Go back to Home</h1>
             <button onClick={() => handleClickHome()} className='border-2 rounded-xl border-black m-2 p-1'>Go back to Home</button>
         </>
     )
