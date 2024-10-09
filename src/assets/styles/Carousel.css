@@ -1,27 +1,55 @@
-  .imagen-carrusel {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .imagen-carrusel img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .imagen-carrusel div {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
+.imagen-carrusel {
+  position: relative;
+  overflow: hidden;
+}
 
-  .my-btn-carousel {
-    background: #0e1538;
-    color: #fff;
-  }
+.imagen-carrusel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagen-carrusel div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.my-btn-carousel {
+  background: #0e1538;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.my-btn-carousel:hover {
+  background: #4a5a9e;
+}
+
+.flex .space-x-2 div {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 0 0.25rem;
+  border-radius: 50%;
+  background-color: #cccccc;
+}
+
+.flex .space-x-2 div.bg-gray-800 {
+  background-color: #333333;
+}
+
+.flex .space-x-2 div.bg-gray-400 {
+  background-color: #cccccc;
+}
+
+.my-carousel-container {
+  width: 90%;
+}

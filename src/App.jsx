@@ -5,25 +5,30 @@ import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom"
 import Home from "./assets/Pages/Home";
 import Cities from "./assets/Pages/Cities";
 import User from "./assets/Pages/User";
-import NotFound from "./assets/Pages/NotFound";
 
 //Se importan los layouts
 import StandarLayout from "./assets/Layouts/StandarLayout";
 import CitiesLayout from "./assets/Layouts/CitiesLayout";
+import NotFoundPage from "./assets/Layouts/NotFoundPage";
 
-const router = createBrowserRouter([ //Lista de objetos con la ruta y el componente a renderizar
-  { element: <StandarLayout></StandarLayout>, //usando el esqueleto (plantilla) para los componentes a renderizar
-    children: [ //Hijos para usarse con la plantilla StandarLayout
-      { path: "/", element: <Home></Home> },
-      { path: "/Home", element: <Navigate to="/" replace /> },
-      { path: "/User", element: <User></User> },
-    ]
-  },
-  { element: <CitiesLayout></CitiesLayout>,
+const router = createBrowserRouter([
+  {
+    element: <StandarLayout />,
     children: [
-      { path: "/Cities", element: <Cities></Cities> },
-      { path: "/*", element: <NotFound></NotFound> },
-    ]
+      { path: "/", element: <Home /> },
+      { path: "/Home", element: <Navigate to="/" replace /> },
+      { path: "/User", element: <User /> },
+    ],
+  },
+  {
+    element: <CitiesLayout />,
+    children: [
+      { path: "/Cities", element: <Cities /> },
+    ],
+  },
+  {
+    path: "/*", // Ruta "catch-all" para manejar 404
+    element: <NotFoundPage />,
   },
 ]);
 

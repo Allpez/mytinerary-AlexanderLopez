@@ -1,0 +1,10 @@
+.bg-cover {
+    height: 100vh; 
+}
+
+.my-notFound-Button {
+    background-color: #0e1538;
+    color: white;
+    border: 1px solid cyan;
+    padding: 10px;
+}

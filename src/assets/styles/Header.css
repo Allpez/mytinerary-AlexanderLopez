@@ -1,0 +1,17 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(14, 21, 56, 1);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.bg-opacity-70 {
+    background-color: rgba(14, 21, 56, 0.9);
+}
+
+.bg-opacity-100 {
+    background-color: rgba(14, 21, 56, 1);
+}

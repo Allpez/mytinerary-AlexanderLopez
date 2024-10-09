@@ -15,7 +15,7 @@
 }
 
 .footer {
-    background: #0e1538;
+    background-color: #0e1538;
 }
 
 .text-banner {
@@ -27,7 +27,6 @@
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
-    overflow: hidden;
     animation: zoomMoveBackground 30s ease-in-out infinite;
 }
 

@@ -44,8 +44,8 @@ const Carousel = ({ pictures, intervalo = 3000 }) => {
   const indicadores = Math.ceil(pictures.length / itemsPorPagina);
 
   return (
-    <div className="carrusel flex flex-col items-center justify-center">
-      <div className="flex items-center justify-center space-x-4">
+    <div className="carrusel flex flex-col items-center mt-5 justify-center">
+      <div className="flex items-center justify-center space-x-4 my-carousel-container">
         <button onClick={retroceder} className="my-btn-carousel p-2 rounded-md hover:bg-gray-400 hover:text-black">
           ◀
         </button>
@@ -58,7 +58,7 @@ const Carousel = ({ pictures, intervalo = 3000 }) => {
                   <img
                     src={picture.picture}
                     alt={picture.title}
-                    className="rounded-lg shadow-md w-full h-full object-cover"
+                    className="rounded-lg shadow-md w-full sm:h-56 h-32  object-cover"
                   />
                   <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-2 text-center">
                     {picture.title}
@@ -76,8 +76,7 @@ const Carousel = ({ pictures, intervalo = 3000 }) => {
         </button>
       </div>
 
-      {/* Indicadores de página */}
-      <div className="flex justify-center mt-4 space-x-2">
+      <div className="flex justify-center mt-4 space-x-2 ">
         {Array.from({ length: indicadores }).map((_, idx) => (
           <div
             key={idx}
