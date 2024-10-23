@@ -1,0 +1,11 @@
+.city-card-button {
+    background-color: #0e1538;
+}
+
+.city-card-button:hover {
+    background-color: #04cbcd;
+}
+
+h3, p{
+    text-shadow: -1px 1px 0 #000000, 1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+}

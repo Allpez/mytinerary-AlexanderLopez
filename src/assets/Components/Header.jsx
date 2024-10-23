@@ -37,7 +37,7 @@ function Header() {
                 onClick={handleLogoClick}
             />
             <h1
-                className='text-white text-center pe-10 mx-auto cursor-pointer text-3xl'
+                className='text-white text-center pe-10 mx-auto cursor-pointer text-5xl'
                 onClick={handleLogoClick}>
                 My Tinerary
             </h1>

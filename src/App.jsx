@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom"
 import Home from "./assets/Pages/Home";
 import Cities from "./assets/Pages/Cities";
 import User from "./assets/Pages/User";
+import CityDetails from './assets/Pages/CityDetails';
 
 //Se importan los layouts
 import StandarLayout from "./assets/Layouts/StandarLayout";
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
     element: <CitiesLayout />,
     children: [
       { path: "/Cities", element: <Cities /> },
+      { path: "/CityDetails", element: <CityDetails /> },
     ],
   },
   {

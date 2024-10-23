@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import inConstructionPage from "../images/inConstructionPage.png";
 import { useNavigate } from 'react-router-dom';
 import "../styles/Cities.css";
 import SearchBar from '../Components/SearchBar';
-import CallApi from '../Components/ApiCity';
+import CallApi from '../Components/CallApi';
 
 function Cities() {
     const navigate = useNavigate();
@@ -18,19 +17,16 @@ function Cities() {
     };
 
     return (
-        <div
-            className="bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${inConstructionPage})` }}
-        >
+        <>
             <SearchBar searchText={text} handleChangeText={handleChangeText} />
-            <CallApi />
+            <CallApi searchText={text} />
             <button 
                 onClick={handleClickHome}
-                className='my-Cities-Button rounded-xl p-5 hover:bg-yellow-700 hover:text-black text-2xl'
+                className='my-Cities-Button rounded-xl p-5 hover:text-black text-2xl'
             >
                 Go back
             </button>
-        </div>
+        </>
     );
 }
 

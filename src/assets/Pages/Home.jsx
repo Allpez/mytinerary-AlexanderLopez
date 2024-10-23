@@ -31,7 +31,7 @@ export default function Home() {
             <div className='flex flex-col justify-between'>
                 <div className='h-screen flex flex-col justify-center items-center'>
                     <h1 className='text-white text-banner text-5xl'>My Tinerary</h1>
-                    <p className='text-white text-banner text-center p-10  text-2xl'>“Find your perfect trip, designed by insiders who know and love their cities!”</p>
+                    <p className='text-white text-banner text-center p-10 text-2xl'>“Find your perfect trip, designed by insiders who know and love their cities!”</p>
 
                     <CTAButton onClick={handleCTAClick} />
                 </div>

@@ -12,3 +12,7 @@
     padding: 10px;
     margin-bottom: 20px;
 }
+
+.my-Cities-Button:hover {
+    background-color: #04cbcd;
+}
