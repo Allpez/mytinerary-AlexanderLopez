@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { IoIosWarning } from "react-icons/io";
 
 function User() {
     const navigate = useNavigate();
@@ -11,9 +12,8 @@ function User() {
 
     return (
         <>
-            <div>User</div>
-            <p>this is User Login page</p>
-            <button onClick={() => handleClickHome()} className='border-2 rounded-xl border-black m-2 p-1'>Go back to Home</button>
+            <h4>this is User Login page</h4>
+            <button onClick={() => handleClickHome()} className='text-7xl text-yellow-500 flex'><IoIosWarning /> Under Construction <IoIosWarning /></button>
         </>
     )
 }

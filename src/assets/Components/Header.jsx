@@ -1,11 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getCities } from '../store/actions/cityAction';
+import { useDispatch } from 'react-redux';
+
 import logo from "../images/LogoMyTinerary.png";
 import "../styles/header.css"
 
 function Header() {
     const navigate = useNavigate();
     const [isScrolled, setIsScrolled] = useState(false);
+    const dispatch = useDispatch();
+
+
+    useEffect(() => {
+        dispatch(getCities());
+    }, [dispatch]);
+
 
     function handleLogoClick() {
         navigate('/');

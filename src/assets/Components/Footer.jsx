@@ -29,8 +29,7 @@ function Footer() {
             <div className='border-t-4 border-indigo-500 sm:border-none'>
                 <h4 className='p-5 underline underline-offset-4 text-2xl'>Find Us</h4>
                 <div className='flex flex-col items-center lg:flex-row gap-4'>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2337.6214015510795!2d-118.25280233772543!3d34.04654160965272!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1728429031652!5m2!1ses!2sco" width="200" height="120" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2337.6214015510795!2d-118.25280233772543!3d34.04654160965272!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1728429031652!5m2!1ses!2sco" width="200" height="120" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     <div className='flex flex-col items-start lg:border-l-4 border-indigo-500'>
                         <p className='my-2 ms-4'>123 Street, City</p>
                         <a href="mailto:contact@mytinerary.com" className='my-2 ms-4'>contact@mytinerary.com</a>
