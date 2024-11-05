@@ -6,7 +6,7 @@ function ContainerCards() {
 
 
     if (loading) {
-        return <div>loading...</div>;
+        return <div className='text-white'>loading...</div>;
     }
 
     if (error) {

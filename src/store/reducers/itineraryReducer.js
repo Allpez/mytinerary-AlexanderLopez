@@ -10,7 +10,7 @@ const initialState = {
 };
 
 //configuración
-export const itinerariesReducer = createReducer(initialState, (builder) => {
+export const itineraryReducer = createReducer(initialState, (builder) => {
     //Casos para solicitud los itinerarios
     builder.addCase(getItineraries.pending, (state, action) => { //
         console.log("Estado pendiente");

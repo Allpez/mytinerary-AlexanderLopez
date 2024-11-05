@@ -1,7 +1,7 @@
 import { createAction,createAsyncThunk } from "@reduxjs/toolkit"; //Para utilizar createAsynchthunk
 import axios from "axios"; //Hay que importar la dependencia axios
 
-// Creamos las acciones
+// Creamos las accion del search
 export const changeSearch = createAction("CHANGE_SEARCH");
 
 //creamos las acciones asincronas con Asynchthunk para realizar las solicitudes
