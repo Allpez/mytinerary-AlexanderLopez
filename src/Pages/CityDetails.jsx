@@ -36,9 +36,11 @@ function CityDetails() {
                     <button onClick={handleGoBack} className="bg-blue-500 w-36 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Go Back</button>
                 </div>
             </div>
-
             <div className='flex justify-center'>
-                <ContainerItineraries cityId={city._id} />
+                <div className='flex flex-col justify-center'>
+                    <h2 className='text-white text-center text-5xl m-10'>Itineraries</h2>
+                    <ContainerItineraries cityId={city._id} />
+                </div>
             </div>
         </div>
     );
