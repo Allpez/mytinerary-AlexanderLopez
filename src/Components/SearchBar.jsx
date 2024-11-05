@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { changeSearch } from '../store/actions/cityAction';
+import { changeSearch } from '../store/actions/cityActions';
 import { FaSearchLocation } from "react-icons/fa";
 
 const SearchBar = () => {

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getCities } from '../store/actions/cityAction';
+import { getCities } from '../store/actions/cityActions';
 import { useDispatch } from 'react-redux';
 
 import logo from "../images/LogoMyTinerary.png";

@@ -2,15 +2,15 @@ import React from 'react'
 import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom"; //Importamos dos funciones de Router-DOM
 
 //Se importan las rutas
-import Home from "./assets/Pages/Home";
-import Cities from "./assets/Pages/Cities";
-import User from "./assets/Pages/User";
-import CityDetails from './assets/Pages/CityDetails';
+import Home from "./Pages/Home";
+import Cities from "./Pages/Cities";
+import User from "./Pages/User";
+import CityDetails from './Pages/CityDetails';
 
 //Se importan los layouts
-import StandarLayout from "./assets/Layouts/StandarLayout";
-import CitiesLayout from "./assets/Layouts/CitiesLayout";
-import NotFoundPage from "./assets/Layouts/NotFoundPage";
+import StandarLayout from "./Layouts/StandarLayout";
+import CitiesLayout from "./Layouts/CitiesLayout";
+import NotFoundPage from "./Layouts/NotFoundPage";
 
 const router = createBrowserRouter([
   {
