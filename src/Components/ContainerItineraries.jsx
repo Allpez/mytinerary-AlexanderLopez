@@ -22,7 +22,7 @@ export default function ContainerItineraries({ cityId }) {
     
 
     return (
-        <div className='ContainerItineraries flex justify-center items-center m-20 p-10 rounded-lg w-8/10 h-auto'>
+        <div className='ContainerItineraries flex flex-col md:flex-row justify-center items-center m-20 p-10 rounded-lg w-8/10 h-auto'>
             {itineraries.length && !loading ? (
                 itineraries.map(itinerary => (
                     <ItinerariesCards key={itinerary._id} itineraries={itinerary} />

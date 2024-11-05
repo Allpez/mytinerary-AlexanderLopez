@@ -42,7 +42,7 @@ export default function Home() {
                 </div>
                 <div className='h-full flex flex-col justify-center items-center my-text text-white'>
                     <h2 className='pt-16 text-4xl text-center m-4'>Find the perfect destination</h2>
-                    <p className='text-2xl text-center p-20 '>Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.</p>
+                    <p className='text-2xl text-center p-24 '>Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.</p>
                 </div>
                 <div className='m-5'>
                     <Carousel pictures={pictures} intervalo={4000} />

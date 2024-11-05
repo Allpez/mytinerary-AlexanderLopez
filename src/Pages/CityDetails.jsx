@@ -31,7 +31,7 @@ function CityDetails() {
             </div>
 
             <div className="flex flex-col justify-center items-center gap-20 p-6 bg-gray-900 bg-opacity-80">
-                <div className='flex'>
+                <div className='flex gap-10'>
                     <button onClick={handleGoHome} className="bg-green-500 w-36 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">Home</button>
                     <button onClick={handleGoBack} className="bg-blue-500 w-36 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Go Back</button>
                 </div>
