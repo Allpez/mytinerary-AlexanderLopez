@@ -10,7 +10,7 @@ const initialState = {
 };
 
 //configuración
-export const cityReducer = createReducer(initialState, (builder) => {
+export const cityReducer = createReducer(initialState, (builder) => { //builder para construir los casos que van a cambiar el estado.
     //Tenemos una accion y un return con el nuevo estado    
     builder.addCase(changeSearch, (state, action) => {
         state.search = action.payload

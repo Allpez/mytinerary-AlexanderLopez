@@ -6,15 +6,14 @@
 
 .img-box {
     width: 100px;
-    height: 50vh;
+    height: 70vh;
     background-color: rgb(57, 57, 59);
     margin: 10px;
     border-radius: 50px;
     background-size: cover;
     background-position: center;
     position: relative;
-    transition: width 4s;
-    transition: height 4s;
+    transition: width 1s;
     overflow: hidden;
 }
 
@@ -69,3 +68,4 @@
     position: absolute;
     bottom: 0;
 }
+

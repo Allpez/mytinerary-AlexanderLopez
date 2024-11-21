@@ -15,9 +15,9 @@ function CityCard({ city }) {
                 className="city-card-image h-72 bg-cover bg-center relative" 
                 style={{ backgroundImage: `url(${city.photo})` }}
             >
-                <div className="absolute top-0 left-0 w-full p-2 bg-gradient-to-t from-black via-transparent to-transparent">
+                <div className="absolute top-0 left-0 w-full p-2">
                     <h3 className="text-white text-xl font-bold">{city.name}</h3>
-                    <p className="text-gray-300">{city.country}</p>
+                    <p className="text-cards text-gray-300">{city.country}</p>
                 </div>
             </div>
             <button 

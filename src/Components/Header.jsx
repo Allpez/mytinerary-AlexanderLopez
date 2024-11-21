@@ -2,15 +2,24 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCities } from '../store/actions/cityActions';
 import { useDispatch } from 'react-redux';
+import { FaUser } from "react-icons/fa";
+import { FaUserAltSlash } from "react-icons/fa";
 
 import logo from "../images/LogoMyTinerary.png";
 import "../styles/header.css"
+// import { useState } from "react";
+
 
 function Header() {
     const navigate = useNavigate();
     const [isScrolled, setIsScrolled] = useState(false);
     const dispatch = useDispatch();
-
+    // const [showUser, setshowUser] = useState(false);
+    
+    // const toggleUserVisibility = () => {
+    //     setshowUser((prevState) => !prevState);
+    //   };
+    
 
     useEffect(() => {
         dispatch(getCities());
@@ -51,6 +60,8 @@ function Header() {
                 onClick={handleLogoClick}>
                 My Tinerary
             </h1>
+            {/* {showUser ? <FaUser className="text-white text-3xl" /> : <FaUserAltSlash className="text-white text-4xl" />} */}
+            
         </header>
     );
 }
