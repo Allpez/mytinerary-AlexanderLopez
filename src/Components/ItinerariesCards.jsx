@@ -30,7 +30,7 @@ export default function ItinerariesCards({ itineraries }) {
                         <div className="flex flex-col justify-center mt-1">
                             <p className="text-gray-300 flex m-1">Hashtags:</p>
                             {itineraries.hashtags.map(tag => (
-                                <span key={tag} className="text-sm text-gray-300 bg-gray-700 rounded-full px-3 py-1 m-1">{tag}</span>
+                                <span key={tag} className="text-sm w-auto text-gray-300 bg-gray-700 rounded-full px-3 py-1 m-1">{tag}</span>
                             ))}
                         </div>
                         <button

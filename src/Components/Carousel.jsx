@@ -43,7 +43,7 @@ const Carousel = ({ pictures, intervalo = 3000 }) => {
   const indicadores = Math.ceil(pictures.length / itemsPorPagina);
 
   return (
-    <div className="carrusel flex flex-col items-center mt-5 justify-center">
+    <div className="carrusel flex w-auto flex-col items-center mt-5 justify-center">
       <div className="flex items-center justify-center space-x-4 my-carousel-container">
         <button onClick={retroceder} className="my-btn-carousel p-2 rounded-md hover:bg-gray-400 hover:text-black">
           ◀

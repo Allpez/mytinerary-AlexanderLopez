@@ -6,6 +6,6 @@
     background-color: #04cbcd;
 }
 
-h3, p{
+h3, .text-cards{
     text-shadow: -1px 1px 0 #000000, 1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
 }
