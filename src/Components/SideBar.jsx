@@ -3,14 +3,12 @@ import "../styles/SideBar.css";
 import { NavLink } from "react-router-dom";
 
 //React Icons
-import { FaUser } from "react-icons/fa";
 import { FaCity } from "react-icons/fa";
 import { IoHome } from "react-icons/io5";
 
 const routes = [
   { to: "/", text: <><IoHome />Home</> },
-  { to: "/cities", text: <><FaCity />Cities</> },
-  { to: "/user", text: <><FaUser />Login</> },
+  { to: "/cities", text: <><FaCity />Cities</> }
 ]
 
 function SideBar() {

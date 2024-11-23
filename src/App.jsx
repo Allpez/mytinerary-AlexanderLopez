@@ -9,6 +9,7 @@ import Home from "./Pages/Home";
 import Cities from "./Pages/Cities";
 import User from "./Pages/User";
 import CityDetails from './Pages/CityDetails';
+import SignRoute from './Components/SignRoute';
 
 //Se importan los layouts
 import StandarLayout from "./Layouts/StandarLayout";
@@ -20,21 +21,39 @@ const router = createBrowserRouter([
   {
     element: <StandarLayout />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/Home", element: <Navigate to="/" replace /> },
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/Home",
+        element: <Navigate to="/" replace />
+      },
     ],
   },
   {
     element: <CitiesLayout />,
     children: [
-      { path: "/Cities", element: <Cities /> },
-      { path: "/CityDetails", element: <CityDetails /> },
+      {
+        path: "/Cities",
+        element: <Cities />
+      },
+      {
+        path: "/CityDetails",
+        element: <CityDetails />
+      },
     ],
   },
   {
     element: <UserLayout />,
     children: [
-      { path: "/User", element: <User /> },
+      {
+        path: "/User",
+        element: (
+        <SignRoute>
+          <User></User>
+        </SignRoute>
+      )},
     ],
   },
 

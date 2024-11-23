@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { login, setUser, logout } from "../actions/authActions";
+import { login, setUser, logout, signUp } from "../actions/authActions";
 
 const initialState = {
     loading: false,
@@ -11,7 +11,7 @@ const initialState = {
 const authReducer = createReducer(initialState, (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
         console.log("Se ejecuto correctamente");
-        console.log(action); 
+        console.log(action);
         state.loading = false,
         state.error = false,
         state.user = action.payload.user,
@@ -36,6 +36,20 @@ const authReducer = createReducer(initialState, (builder) => {
     }).addCase(setUser, (state, action) => {
         state.user = action.payload.user,
         state.token = action.payload.token
+
+    }).addCase(signUp.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = false;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+
+    }).addCase(signUp.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+
+    }).addCase(signUp.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
 
     }).addCase(logout, (state, action) => {
         localStorage.removeItem("token");
