@@ -22,7 +22,7 @@ export const cityReducer = createReducer(initialState, (builder) => { //builder 
         state.loading = true;
     }).addCase(getCities.fulfilled, (state, action) => {
         console.log("Estado resuelto");
-        state.loading = false;
+        state.loading = false;z
         state.cities = action.payload;
     }).addCase(getCities.rejected,(state, action) => {
         console.log("Estado rechazado");

@@ -9,9 +9,15 @@
 }
 
 .bg-opacity-70 {
-    background-color: rgba(14, 21, 56, 0.9);
+    background-color: rgba(14, 21, 56, 0.7);
 }
 
 .bg-opacity-100 {
     background-color: rgba(14, 21, 56, 1);
+}
+
+.logo {
+    filter: drop-shadow(
+        0 0 10px rgba(48, 145, 184, 0.5)
+    );
 }
