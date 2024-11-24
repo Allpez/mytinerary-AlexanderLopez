@@ -9,13 +9,15 @@ const setUser = createAction("setUser", (datos) => {
 })
 
 // Acción de login
-const login = createAsyncThunk("login", async ({ email, password, photo, firstname }) => {
+const login = createAsyncThunk("login", async ({ email, password, photo, firstname, lastname, country }) => {
     console.log("Entramos al Login");
     const credentials = {
+        firstname: firstname,
+        lastname: lastname,
         email: email,
         password: password,
-        name: firstname,
-        photo: photo
+        photo: photo,
+        country: country
     }
     const response = await axios.post("http://localhost:8080/api/auth/signIn", credentials)
     console.log("Se proceso la solicitud");
@@ -24,17 +26,18 @@ const login = createAsyncThunk("login", async ({ email, password, photo, firstna
 
     localStorage.setItem("token", response.data.token)
     return response.data
-}) //fullfilled,pending,rejected
+})
 
 // Acción de registro (sign up)
-const signUp = createAsyncThunk("signUp", async ({ email, password, firstName, lastName, country }) => {
+const signUp = createAsyncThunk("signUp", async ({ email, password, firstname, lastname, photo, country }) => {
+    console.log("Entramos al signUp");
     const userData = {
-        firstName,
-        lastName,
-        email,
-        password,
-        country,
-        online
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password,
+        photo: photo,
+        country: country
     };
     const response = await axios.post("http://localhost:8080/api/users/register", userData);
     // localStorage.setItem("token", response.data.token);
