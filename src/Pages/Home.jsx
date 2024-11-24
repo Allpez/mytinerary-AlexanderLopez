@@ -3,30 +3,46 @@ import CTAButton from '../Components/CTAButton';
 import Carousel from '../Components/Carousel';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import '../styles/home.css';
 
 export default function Home() {
-    const [pictures, setPictures] = useState([]); 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search)
+        const token = params.get("token")
+        if (token) {
+            localStorage.setItem("token", token)
+
+            loginWithToken(token).then((user) => {
+                dispatch(setUser({ user, token }))
+            })
+            navigate("/")
+        }
+    }, [dispatch])
+
+    const [pictures, setPictures] = useState([]);
 
     useEffect(() => {
         // Función para obtener datos de la API
         const fetchPictures = async () => {
             try {
                 const response = await axios.get("http://localhost:8080/api/cities/all");
-                const cities = response.data.response; 
+                const cities = response.data.response;
                 const formattedPictures = cities.map(city => ({
                     title: city.name,
                     picture: city.photo
                 }));
-                setPictures(formattedPictures); 
+                setPictures(formattedPictures);
             } catch (error) {
                 console.error('Error fetching pictures:', error);
             }
         };
 
         fetchPictures();
-    }, []); 
+    }, []);
 
     function handleCTAClick() {
         navigate('/Cities');
