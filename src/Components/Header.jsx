@@ -8,14 +8,13 @@ import logo from "../images/LogoMyTinerary.png";
 import "../styles/header.css";
 
 function Header() {
-    const token = useSelector((state) => state.authStore.token); // Obtener el token desde el estado
-    const user = useSelector((state) => state.authStore.user); // Obtener el usuario desde el estado
-    const navigate = useNavigate(); // Utilizamos el hook navigate
+    const token = useSelector((state) => state.authStore.token);
+    const user = useSelector((state) => state.authStore.user); 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // Detectar el desplazamiento de la página
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
@@ -34,13 +33,11 @@ function Header() {
     }, []);
 
     const handleLoginClick = () => {
-        // Ejecuta el dispatch para login y luego redirige a home
         dispatch(login());
         navigate('/user');
     };
 
     const handleLogoutClick = () => {
-        // Ejecuta el dispatch para logout y luego redirige a home
         dispatch(logout());
         navigate('/home');
     };
@@ -51,35 +48,33 @@ function Header() {
                 src={logo}
                 className='logo w-24 h-16 cursor-pointer'
                 alt="Logo-My-Itinerary"
-                onClick={() => navigate('/home')} // Hacer clic en el logo también redirige a home
+                onClick={() => navigate('/home')} 
             />
             <h1
                 className='text-white text-center pe-10 mx-auto cursor-pointer text-3xl sm:text-5xl'
-                onClick={() => navigate('/home')} // Redirigir al home también al hacer clic en el título
+                onClick={() => navigate('/home')} 
             >
                 My Tinerary
             </h1>
 
             <div className="flex items-center ml-auto">
                 {token ? (
-                    // Si el usuario está logueado, mostramos su foto, nombre y el ícono de logout
                     <div className="flex items-center space-x-3">
                         <img
-                            src={user?.photo || "/default-profile.jpg"} // Foto del usuario, con valor predeterminado
+                            src={user?.photo || "/default-profile.jpg"} 
                             alt="User Profile"
                             className="w-24 h-16 rounded-full border-2 border-sky-200"
                         />
                         <span className="text-white text-3xl">Hello, {user?.firstname}</span>
                         <RiLogoutBoxRLine
                             className="text-white text-4xl cursor-pointer"
-                            onClick={handleLogoutClick} // Redirige a home al hacer clic en logout y ejecuta el dispatch
+                            onClick={handleLogoutClick} 
                         />
                     </div>
                 ) : (
-                    // Si el usuario no está logueado, mostramos el ícono de login
                     <FaUser
                         className="text-white text-3xl cursor-pointer"
-                        onClick={handleLoginClick} // Redirige a home al hacer clic en login y ejecuta el dispatch
+                        onClick={handleLoginClick}
                     />
                 )}
             </div>

@@ -10,6 +10,7 @@ export default function Home() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    
     useEffect(() => {
         const params = new URLSearchParams(window.location.search)
         const token = params.get("token")
@@ -21,12 +22,11 @@ export default function Home() {
             })
             navigate("/")
         }
-    }, [dispatch])
+    }, [dispatch,navigate])
 
     const [pictures, setPictures] = useState([]);
 
     useEffect(() => {
-        // Función para obtener datos de la API
         const fetchPictures = async () => {
             try {
                 const response = await axios.get("http://localhost:8080/api/cities/all");
