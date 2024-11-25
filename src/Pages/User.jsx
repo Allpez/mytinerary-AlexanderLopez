@@ -56,6 +56,7 @@ const User = () => {
     "United States",
     "Canada",
     "Mexico",
+    "Colombia",
     "Brazil",
     "Argentina",
     "Germany",
