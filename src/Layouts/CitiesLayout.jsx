@@ -25,9 +25,3 @@ function CitiesLayout() {
 
 export default CitiesLayout
 
-
-
-
-// import saltoAngelVzla from "../images/salto-del-angel-en-venezuela.webp";
-// style={{ backgroundImage: `url(${saltoAngelVzla})` }}
-
