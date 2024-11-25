@@ -10,7 +10,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/User.css";
 
 const User = () => {
-  const [isSignIn, setIsSignIn] = useState(true); // Estado para alternar entre formularios
+  const [isSignIn, setIsSignIn] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
