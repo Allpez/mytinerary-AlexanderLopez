@@ -19,7 +19,6 @@ const authReducer = createReducer(initialState, (builder) => {
 
     }).addCase(login.pending, (state, action) => {
         console.log("Se inicio sign in");
-        console.log(action);
         state.loading = true,
         state.error = false,
         state.user = null,

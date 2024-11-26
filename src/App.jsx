@@ -7,7 +7,8 @@ import { setUser } from './store/actions/authActions';
 //Se importan las rutas
 import Home from "./Pages/Home";
 import Cities from "./Pages/Cities";
-import User from "./Pages/User";
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
 import CityDetails from './Pages/CityDetails';
 import SignRoute from './Components/SignRoute';
 
@@ -48,10 +49,17 @@ const router = createBrowserRouter([
     element: <UserLayout />,
     children: [
       {
-        path: "/User",
+        path: "/SignIn",
         element: (
         <SignRoute>
-          <User></User>
+          <SignIn></SignIn>
+        </SignRoute>
+      )},
+      {
+        path: "/SignUp",
+        element: (
+        <SignRoute>
+          <SignUp></SignUp>
         </SignRoute>
       )},
     ],
