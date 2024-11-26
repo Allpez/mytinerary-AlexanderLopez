@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const routes = [
     { to: ("/"), text: "Home", unrequiredAuth: true },
     { to: "/cities", text: "Cities", unrequiredAuth: true },
-    { to: "/user", text: "Login", unrequiredAuth: false },
+    { to: "/SignIn", text: "Login", unrequiredAuth: false },
 ]
 
 const activeClass = "text-white font-extrabold my-2 text-2xl underline underline-offset-4";

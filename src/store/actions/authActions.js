@@ -2,14 +2,14 @@ import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-const setUser = createAction("setUser", (datos) => {
+const setUser = createAction("setUser", ({ user, token }) => {
     return {
-        payload: datos,
+        payload: ({ user, token }),
     }
 })
 
 // Acción de login
-const login = createAsyncThunk("login", async ({ email, password, photo, firstname, lastname, country }) => {
+const login = createAsyncThunk("login", async ({ firstname, lastname, email, password, photo, country }) => {
     console.log("Entramos al Login");
     const credentials = {
         firstname: firstname,
@@ -40,7 +40,7 @@ const signUp = createAsyncThunk("signUp", async ({ email, password, firstname, l
         country: country
     };
     const response = await axios.post("http://localhost:8080/api/users/register", userData);
-    // localStorage.setItem("token", response.data.token);
+    localStorage.setItem("token", response.data.token);
     return response.data;
 });
 

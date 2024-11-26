@@ -6,11 +6,28 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import '../styles/home.css';
 
+const loginWithToken = async (token) => {
+    try {
+        console.log("Se ejecuto Login With Token");
+
+        const response = await axios.get(
+            "http://localhost:8080/api/users/validateToken",
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+        return response.data.response;
+    } catch (error) {
+        console.log("error", error);
+    }
+};
+
 export default function Home() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    
     useEffect(() => {
         const params = new URLSearchParams(window.location.search)
         const token = params.get("token")
@@ -22,7 +39,7 @@ export default function Home() {
             })
             navigate("/")
         }
-    }, [dispatch,navigate])
+    }, [dispatch, navigate])
 
     const [pictures, setPictures] = useState([]);
 

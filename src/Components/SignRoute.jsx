@@ -5,10 +5,10 @@ function SignRoute({children}) {
 
 const token = useSelector(state =>state.authStore.token)
     if (token)
-        return <Navigate to="/" replace></Navigate>
+        return <Navigate to="/home" replace></Navigate>
     return children
 
     
 }
 
-export default SignRoute
+export default SignRoute 
